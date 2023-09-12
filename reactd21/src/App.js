@@ -17,6 +17,7 @@ function App() {
         if (!product1AddedToCart && !product2AddedToCart) {
       // Increase the total cart count by 1
       setCartCount(cartCount + 1);
+      
 
       // Set the flag to indicate that the product has been added to the cart
       if (product === 'product1') {
