@@ -5,19 +5,34 @@ import { Button } from 'reactstrap';
 
 function App() {
     const [cartCount, setCartCount] = useState(0);
-    const [isAddedToCart, setIsAddedToCart] = useState(false);
+    // const [isAddedToCart, setIsAddedToCart] = useState(false);
+    const [product1AddedToCart, setProduct1AddedToCart] = useState(false);
+    const [product2AddedToCart, setProduct2AddedToCart] = useState(false);
+    const [product3AddedToCart, setProduct3AddedToCart] = useState(false);
+    const [product4AddedToCart, setProduct4AddedToCart] = useState(false);
+    const [product5AddedToCart, setProduct5AddedToCart] = useState(false);
+    const [product6AddedToCart, setProduct6AddedToCart] = useState(false);
 
-    const handleAddToCart = () => {
-      // Increase the cart count by 1 when "Add to cart" is clicked
-    //   setCartCount(cartCount + 1);
-    //   setIsAddedToCart(true);
-    if (!isAddedToCart) {
-        // Increase the total cart count by 1
-        setCartCount(cartCount + 1);
-  
-        // Set the flag to indicate that the item has been added to the cart
-        setIsAddedToCart(true);
-      }
+    const handleAddToCart = (product) => {
+        if (!product1AddedToCart && !product2AddedToCart) {
+      // Increase the total cart count by 1
+      setCartCount(cartCount + 1);
+
+      // Set the flag to indicate that the product has been added to the cart
+      if (product === 'product1') {
+        setProduct1AddedToCart(true);
+      } else if (product === 'product2') {
+        setProduct2AddedToCart(true);
+      }else if (product === 'product3') {
+        setProduct2AddedToCart(true);
+    }else if (product === 'product4') {
+        setProduct2AddedToCart(true);   
+    }else if (product === 'product5') {
+        setProduct2AddedToCart(true);
+    }else if (product === 'product6') {
+        setProduct2AddedToCart(true);
+    }
+}
     }
   return (
     <>
@@ -109,7 +124,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={() => handleAddToCart('product1')}disabled={product1AddedToCart}> {product1AddedToCart ? 'Added to Cart' : 'Add Product 1 to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -131,7 +146,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart} disabled={isAddedToCart}>{isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={()=>handleAddToCart('product2')} disabled={product2AddedToCart}>{product2AddedToCart ? 'Added to Cart' : 'Add Product 2 to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -158,7 +173,8 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={() => handleAddToCart('product3')}  disabled={product3AddedToCart}>  {product3AddedToCart ? 'Added to Cart' : 'Add Product 3 to Cart'}
+</a></div>
                             </div>
                         </div>
                     </div>
@@ -180,7 +196,8 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={()=>handleAddToCart('product4')}  disabled={product4AddedToCart}>{product4AddedToCart ? 'Added to Cart' : 'Add Product 4 to Cart'}
+</a></div>
                             </div>
                         </div>
                     </div>
@@ -229,7 +246,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={()=>handleAddToCart('product5')}  disabled={product5AddedToCart}>{product5AddedToCart ? 'Added to Cart' : 'Add Product 5 to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -256,7 +273,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={()=>handleAddToCart('product6')}  disabled={product6AddedToCart}>{product6AddedToCart ? 'Added to Cart' : 'Add Product 6 to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -270,26 +287,10 @@ function App() {
        </body>
     </>
   );
-}
+  }
 
 export default App;
 
 
 
 
-{/* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */}
