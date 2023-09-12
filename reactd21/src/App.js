@@ -1,7 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import React , {useState} from 'react'
+import { Button } from 'reactstrap';
 
 function App() {
+    const [cartCount, setCartCount] = useState(0);
+    const [isAddedToCart, setIsAddedToCart] = useState(false);
+
+    const handleAddToCart = () => {
+      // Increase the cart count by 1 when "Add to cart" is clicked
+    //   setCartCount(cartCount + 1);
+    //   setIsAddedToCart(true);
+    if (!isAddedToCart) {
+        // Increase the total cart count by 1
+        setCartCount(cartCount + 1);
+  
+        // Set the flag to indicate that the item has been added to the cart
+        setIsAddedToCart(true);
+      }
+    }
   return (
     <>
        <body>
@@ -28,7 +45,7 @@ function App() {
                         <button className="btn btn-outline-dark" type="submit">
                             <i className="bi-cart-fill me-1"></i>
                             Cart
-                            <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span className="badge bg-dark text-white ms-1 rounded-pill">{cartCount}</span>
                         </button>
                     </form>
                 </div>
@@ -92,7 +109,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -114,7 +131,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart} disabled={isAddedToCart}>{isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -141,7 +158,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -163,7 +180,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -212,7 +229,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
@@ -239,7 +256,7 @@ function App() {
                             </div>
                             {/* <!-- Product actions--> */}
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#" onClick={handleAddToCart}  disabled={isAddedToCart}> {isAddedToCart ? 'Added to Cart' : 'Add Product  to Cart'}</a></div>
                             </div>
                         </div>
                     </div>
